@@ -2,6 +2,7 @@ import 'package:scan/pages/home.dart';
 import 'package:scan/pages/intro.dart';
 import 'package:scan/pages/login.dart';
 import 'package:flutter/material.dart';
+import 'package:scan/utils/themes.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -16,10 +17,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      themeMode: ThemeMode.system,
+      theme: ThemeClass.lightTheme,
+      darkTheme: ThemeClass.darkTheme,
       home: IntroPage(),
     );
   }

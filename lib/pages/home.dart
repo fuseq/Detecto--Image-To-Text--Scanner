@@ -50,34 +50,34 @@ class _HomeScreenState extends State<HomeScreen> {
           ? AnimatedNotchBottomBar(
               /// Provide NotchBottomBarController
               notchBottomBarController: _controller,
-              color: Colors.white,
+              color: Theme.of(context).primaryColor,
               showLabel: false,
-              notchColor: Colors.black87,
+              notchColor: Theme.of(context).primaryColorLight,
 
               /// restart app if you change removeMargins
               removeMargins: false,
               bottomBarWidth: 500,
               durationInMilliSeconds: 300,
               bottomBarItems: [
-                const BottomBarItem(
+                 BottomBarItem(
                   inActiveItem: Icon(
                     Icons.home_filled,
-                    color: Colors.blueGrey,
+                    color: Theme.of(context).primaryColorLight,
                   ),
                   activeItem: Icon(
                     Icons.home_filled,
-                    color: Colors.blueAccent,
+                    color: Theme.of(context).iconTheme.color,
                   ),
                   itemLabel: 'Page 1',
                 ),
-                const BottomBarItem(
+                 BottomBarItem(
                   inActiveItem: Icon(
                     Icons.star,
-                    color: Colors.blueGrey,
+                    color: Theme.of(context).primaryColorLight,
                   ),
                   activeItem: Icon(
                     Icons.star,
-                    color: Colors.blueAccent,
+                    color: Theme.of(context).iconTheme.color,
                   ),
                   itemLabel: 'Page 2',
                 ),
@@ -86,11 +86,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 BottomBarItem(
                   inActiveItem: Icon(
                     Icons.search,
-                    color: Colors.blueGrey,
+                    color: Theme.of(context).primaryColorLight,
                   ),
                   activeItem: Icon(
                     Icons.search,
-                    color: Colors.red,
+                     color: Theme.of(context).iconTheme.color,
                   ),
                   itemLabel: 'Page 3',
                 ),

@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:scan/widgets/profile/profile_pic.dart';
-
+import 'package:scan/utils/themes.dart';
 import '../../pages/settings.dart';
 import '../../utils/colors.dart';
 
@@ -24,7 +23,6 @@ class ProfileBody extends StatelessWidget {
         press: () {},
         icon: FontAwesomeIcons.user,
       ),
-
       ProfileMenu(
         text: 'Settings',
         press: () {
@@ -35,7 +33,6 @@ class ProfileBody extends StatelessWidget {
         },
         icon: FontAwesomeIcons.gear,
       ),
-
       ProfileMenu(
         text: 'Logout',
         press: () {},
@@ -63,7 +60,6 @@ class ProfileMenu extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(18),
           ),
@@ -76,10 +72,13 @@ class ProfileMenu extends StatelessWidget {
             const SizedBox(width: 20),
             Text(
               text,
-              style: TextStyle(color: Colors.grey.shade600),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             const Spacer(),
-            const FaIcon(FontAwesomeIcons.chevronRight, color: Colors.black45),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: Theme.of(context).iconTheme.color,
+            )
           ],
         ),
       ),
