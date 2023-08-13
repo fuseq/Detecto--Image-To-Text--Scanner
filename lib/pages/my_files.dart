@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../data/file_item.dart';
 import 'edited_text_screen.dart';
 
+
 class MyFilesScreen extends StatefulWidget {
   const MyFilesScreen({Key? key}) : super(key: key);
 
@@ -11,36 +12,22 @@ class MyFilesScreen extends StatefulWidget {
 }
 
 class _MyFilesScreenState extends State<MyFilesScreen> {
-  final List<FileItem> files = [
-    FileItem(
-      id: 1,
-      header: 'Dosya Başlığı 1',
-      text: 'Bu dosya hakkında metin 1.',
-      editor: 'Dosya Editörü 1',
-    ),
-    FileItem(
-      id: 2,
-      header: 'Dosya Başlığı 2',
-      text: 'Bu dosya hakkında metin 2.',
-      editor: 'Dosya Editörü 2',
-    ),
-    // Diğer dosyaları burada ekleyebilirsiniz.
-  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('My Files'),
+        title: Text('My Files',style: Theme.of(context).textTheme.bodyLarge,),
       ),
       body: ListView.separated(
-        itemCount: files.length,
+        itemCount: fileItems.length,
         separatorBuilder: (BuildContext context, int index) => Divider(),
         itemBuilder: (BuildContext context, int index) {
-          final file = files[index];
+          final file = fileItems[index];
           return ListTile(
             title: Text(file.header),
-            subtitle: Text(file.text),
+            subtitle: Text(file.text,maxLines: 1,overflow: TextOverflow.ellipsis,),
             trailing: Text(file.editor),
             onTap: () {
               Navigator.push(

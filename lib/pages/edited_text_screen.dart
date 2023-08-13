@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart'; // Eklenen kısım
 
 class EditedTextScreen extends StatefulWidget {
   final String editedText;
@@ -18,13 +19,21 @@ class _EditedTextScreenState extends State<EditedTextScreen> {
       appBar: AppBar(
         title: Text(widget.header, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
         centerTitle: true,
+        actions: [ // Yeni kısım
+          IconButton(
+            icon: Icon(Icons.copy),
+            onPressed: () {
+              Clipboard.setData(ClipboardData(text: widget.editedText));
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Metin kopyalandı')));
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             SizedBox(height: 10),
             Card(
               elevation: 8,
@@ -39,4 +48,3 @@ class _EditedTextScreenState extends State<EditedTextScreen> {
     );
   }
 }
-

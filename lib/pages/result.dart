@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart' as quill;
+import 'package:scan/data/file_item.dart';
+import 'package:uuid/uuid.dart';
 
 import 'edited_text_screen.dart';
 
@@ -27,13 +29,12 @@ class _ResultScreenState extends State<ResultScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-         
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-            
               Container(
-                margin: EdgeInsets.only(top: 20, left: 10, right: 10, bottom: 20),
+                margin:
+                    EdgeInsets.only(top: 20, left: 10, right: 10, bottom: 20),
                 width: MediaQuery.of(context).size.width,
                 height: 10,
               ),
@@ -47,9 +48,7 @@ class _ResultScreenState extends State<ResultScreen> {
                     child: Container(
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
-                      decoration: const BoxDecoration(boxShadow: [
-                       
-                      ]),
+                      decoration: const BoxDecoration(boxShadow: []),
                       child: quill.QuillEditor.basic(
                           controller: _controller, readOnly: false),
                     ),
@@ -59,11 +58,21 @@ class _ResultScreenState extends State<ResultScreen> {
               Padding(
                 padding: EdgeInsets.all(10),
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 25, vertical: 15),
+                  ),
                   onPressed: () {
-                    // Navigate to EditedTextScreen and pass the edited text
-                  
+                    fileItems.add(FileItem(
+                        id: Uuid().v4(),
+                        header: 'Yeni Dosya',
+                        editor: 'user',
+                        text: _controller.document.toPlainText()));
                   },
-                  child: Text('Kaydet'),
+                  child: Text('Kaydet', style: Theme.of(context).textTheme.bodyLarge),
                 ),
               ),
             ],
