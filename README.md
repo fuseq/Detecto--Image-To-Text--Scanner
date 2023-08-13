@@ -1,16 +1,49 @@
-# scan
+# Detecto App
 
-A new Flutter project.
+![App Logo](https://www.linkpicture.com/q/Adsız-tasarım-1-1.png)
 
-## Getting Started
+Detecto is a Flutter application designed to streamline image scanning processes. With this app, you can detect, edit, and save text from images.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- Detect and extract text from images.
+- Edit and save the recognized text.
+- Store and manage scanned images.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screenshots
+- Login & Signup
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="https://www.linkpicture.com/q/Screenshot_1691942199.png" alt="Screenshot 1" width="30%">
+  <img src="https://www.linkpicture.com/q/Screenshot_1691942206.png" alt="Screenshot 2" width="30%">
+  <img src="https://www.linkpicture.com/q/Screenshot_1691942211.png" alt="Screenshot 3" width="30%">
+</div>
+- Profile,Scan,Files Pages
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="https://www.linkpicture.com/q/Screenshot_1691942280.png" alt="Screenshot 1" width="30%">
+  <img src="https://www.linkpicture.com/q/Screenshot_1691942265.png" alt="Screenshot 2" width="30%">
+  <img src="https://www.linkpicture.com/q/Screenshot_1691942290.png" alt="Screenshot 3" width="30%">
+</div>
+
+- Edit Text
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="https://www.linkpicture.com/q/WhatsApp-Image-2023-08-13-at-7.03.18-PM.jpeg" alt="Screenshot 1" width="30%">
+
+</div>
+
+## Installation
+
+You can run the app locally by following these steps:
+
+1. Install Flutter on your computer. [Flutter Installation Guide](https://flutter.dev/docs/get-started/install)
+2. Clone this repository: `git clone https://github.com/fuseq/detecto.git`
+3. Navigate to the project folder: `cd detecto`
+4. Install the required dependencies: `flutter pub get`
+5. Run the app: `flutter run`
+
+
+
+
+Download the app and enhance your image scanning experience! If you have any questions or suggestions, please feel free to contact us at [https://furkan-senoglu.netlify.app/]
