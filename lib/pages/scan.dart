@@ -173,27 +173,28 @@ class _ScanScreenState extends State<ScanScreen> with WidgetsBindingObserver {
                         children: [
                           Expanded(child: Container()),
                           Container(
-                            padding: const EdgeInsets.only(bottom: 10),
+                            padding: const EdgeInsets.only(bottom: 150),
                             child: Center(
-                              child: ElevatedButton(
-                                style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          Colors.transparent),
-                                  foregroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          Colors.white),
-                                  side: MaterialStateProperty.all<BorderSide>(
-                                    BorderSide(
-                                      color: Colors
-                                          .white, // Choose the border color you want
-                                      width:
-                                          2.0, // Choose the border width you want
-                                    ),
+                              child: Ink(
+                                decoration: BoxDecoration(
+                                  color: Colors.transparent,
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: Colors.white,
+                                    width: 2.0,
                                   ),
                                 ),
-                                onPressed: () => _scanImage(context),
-                                child: Text('Scan Text'),
+                                child: IconButton(
+                                  icon: Icon(Icons.flip),
+                                  onPressed: () => _scanImage(context),
+                                  color: Colors.white,
+                                  iconSize:
+                                      36, // Adjust the icon size as needed
+                                  splashRadius:
+                                      28, // Adjust the splash radius as needed
+                                  padding: const EdgeInsets.all(16),
+                                  tooltip: 'Scan Image',
+                                ),
                               ),
                             ),
                           )

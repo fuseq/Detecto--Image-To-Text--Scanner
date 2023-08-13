@@ -1,9 +1,17 @@
 import 'package:scan/pages/scan.dart';
 import 'package:flutter/material.dart';
 
+import '../services/local_auth_service.dart';
 import 'home.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  bool authenticated =false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +75,12 @@ class LoginPage extends StatelessWidget {
                       child: MaterialButton(
                         minWidth: double.infinity,
                         height: 60,
-                        onPressed: () {
+                        onPressed: () async {
+                          final authenticate =await LocalAuth.authenticate();
+                          setState(() {
+                            authenticated = authenticate;
+                          });
+                          if(authenticated)
                           Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
                         },
                         color: Colors.greenAccent,
